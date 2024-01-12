@@ -1,21 +1,32 @@
-.App {
-  text-align: left;
+.App{
+  text-align: center;
 }
+
 
 .App-header {
 
   display: block;
-  margin: 28px auto;
-  padding: 50px 30px;
+  margin: 50px auto;
+  padding: 60px 60px;
   border-radius: 5px;
   max-width: 700px;
   min-height: 300px;
   box-shadow: 5px 5px 15px #aaa9a9;
 }
 
-.App h1, h2{
+.App .degrees {
   text-transform: capitalize;
-  opacity: 75%;
-  font-size: 45px;
+  font-size: 50px;
   line-height: 0.5;
+}
+
+.App .units {
+  position: relative;
+  top: -20px;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+.App .main{
+  text-align: left;
 }
