@@ -3,7 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Search() {
-  let [city, setCity] = useState("Montreal");
+  let [city, setCity] = useState("");
   let [weather, setWeather] = useState({});
    let [content, setContent] = useState(""); 
  
@@ -82,7 +82,9 @@ if (content){
     return (
       <div>
         {form}
-        <strong className="text-center">This is your daily forecast, find a city.</strong>
+        <strong className="text-center">
+          This is your daily forecast, find a city.
+        </strong>
       </div>
     );
 }
