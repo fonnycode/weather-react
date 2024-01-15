@@ -1,13 +1,13 @@
 
 import './App.css';
-import Search from "./Search";
+import WeatherInfo from "./WeatherInfo";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
     
-   <Search />
+   <WeatherInfo />
       </header>
     </div>
   );
