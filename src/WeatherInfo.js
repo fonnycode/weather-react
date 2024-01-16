@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
 
+import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import "bootstrap/dist/css/bootstrap.css";
 
-export default function WeatherInfo(props) {
+export default function WeatherInfo() {
   const [city, setCity] = useState("Montreal");
   const [weather, setWeather] = useState({});
   const [content, setContent] = useState(false);
@@ -63,10 +64,7 @@ export default function WeatherInfo(props) {
     <div className="temperature container">
       <div className="row mt-5">
         <div className="col-4 mt-3">
-          <strong className="degrees">{weather.temperature}°</strong>
-          <span className="units">
-            <a href="/">C</a> | <a href="/">F</a>
-          </span>
+          <WeatherTemperature celsius={weather.temperature} />
         </div>
         <div className="col-4 mt-2 text-capitalize">
           <strong>{weather.description}</strong>
