@@ -64,7 +64,7 @@ export default function WeatherInfo() {
     <div className="temperature container">
       <div className="row mt-5">
         <div className="col-4 mt-3">
-          <WeatherTemperature celsius={weather.temperature} />
+          <WeatherTemperature celsius={weather.temperature}/>
         </div>
         <div className="col-4 mt-2 text-capitalize">
           <strong>{weather.description}</strong>
