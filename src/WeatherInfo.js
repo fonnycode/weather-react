@@ -47,30 +47,35 @@ export default function WeatherInfo() {
         placeholder="Search a city"
         onChange={updateCity}
       />
-      <input type="submit" value="Search" className="p-2 border-0 rounded " />
+      <input
+        type="submit"
+        value="Search"
+        className="btn btn-info p-2 border-0 rounded "
+      />
     </form>
   );
 
   let heading = (
     <div className="main">
       <h1 className="cities ms-5 mt-5 text-capitalize"> {city} </h1>
-        <h2 className="ms-5">
-          <FormattedDate date={weather.date} />
-        </h2>
+      <h2 className="ms-5">
+        <FormattedDate date={weather.date} />
+      </h2>
+    <span className="text-capitalize ms-5">{weather.description}</span>
+     
     </div>
   );
 
   let element = (
     <div className="temperature container">
-      <div className="row mt-5">
+      <div className="row mt-3">
+        <div className="col-4 mt-4">
+          <WeatherTemperature celsius={weather.temperature} />
+        </div>
+        <div className="col-4 p-0">
+          <img src={weather.icon} alt={weather.description} width="100px" />
+        </div>
         <div className="col-4 mt-3">
-          <WeatherTemperature celsius={weather.temperature}/>
-        </div>
-        <div className="col-4 mt-2 text-capitalize">
-          <strong>{weather.description}</strong>
-          <img src={weather.icon} alt={weather.description} width="120px" />
-        </div>
-        <div className="col-4 mt-2">
           <ul>
             <li className="list-unstyled">Humidity: {weather.humidity} %</li>
             <li className="list-unstyled">Wind: {weather.wind} km/h</li>
