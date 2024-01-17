@@ -6,7 +6,7 @@ import WeatherTemperature from "./WeatherTemperature";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function WeatherInfo() {
-  const [city, setCity] = useState("Montreal");
+  const [city, setCity] = useState("Paris");
   const [weather, setWeather] = useState({});
   const [content, setContent] = useState(false);
 
@@ -94,7 +94,7 @@ export default function WeatherInfo() {
       </div>
     );
 }else{
-  search("Montreal");
+  search("Paris");
   return "loading";
 }
 }
