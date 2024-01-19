@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import DailyForecast from "./DailyForecast";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import "bootstrap/dist/css/bootstrap.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo() {
   const [city, setCity] = useState("Paris");
@@ -19,7 +21,7 @@ export default function WeatherInfo() {
       description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -73,9 +75,10 @@ export default function WeatherInfo() {
           <WeatherTemperature celsius={weather.temperature} />
         </div>
         <div className="col-4 p-0">
-          <img src={weather.icon} alt={weather.description} width="100px" />
+          <WeatherIcon code={weather.icon} size={82} />
+    
         </div>
-        <div className="col-4 mt-3">
+        <div className="col-4 mt-2">
           <ul>
             <li className="list-unstyled">Humidity: {weather.humidity} %</li>
             <li className="list-unstyled">Wind: {weather.wind} km/h</li>
@@ -91,6 +94,7 @@ export default function WeatherInfo() {
         {form}
         {heading}
         {element}
+        <DailyForecast />
       </div>
     );
 }else{
