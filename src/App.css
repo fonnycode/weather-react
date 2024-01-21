@@ -32,11 +32,12 @@
   text-align: left;
 }
 .App h1{
-  font-size: 50px;
+  font-size: 65px;
 }
 
 .App h2{
   font-size: 18px;
+  font-style: italic;
 }
 .App a{
   color: #14A2B8;

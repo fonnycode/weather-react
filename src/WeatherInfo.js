@@ -13,9 +13,11 @@ export default function WeatherInfo() {
   const [content, setContent] = useState(false);
 
   function displayWeather(response) {
+    console.log(response.data);
     setContent("true");
     setWeather({
       city: response.data.name,
+      coord: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
@@ -63,7 +65,7 @@ export default function WeatherInfo() {
       <h2 className="ms-5">
         <FormattedDate date={weather.date} />
       </h2>
-    <span className="text-capitalize ms-5">{weather.description}</span>
+    <span className="text-capitalize fs-3 ms-5">{weather.description}</span>
      
     </div>
   );
@@ -94,7 +96,7 @@ export default function WeatherInfo() {
         {form}
         {heading}
         {element}
-        <DailyForecast />
+        <DailyForecast coord={weather.coord} />
       </div>
     );
 }else{
