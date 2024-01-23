@@ -35,7 +35,7 @@ export default function WeatherInfo(props) {
   }
 
   function search() {
-    let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
+    const apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(displayWeather);
@@ -61,7 +61,7 @@ export default function WeatherInfo(props) {
           />
         </form>
         <div className="main">
-          <h1 className="cities ms-5 mt-5 text-capitalize"> {city} </h1>
+          <h1 className="cities ms-5 mt-5 text-capitalize"> {weather.city} </h1>
           <h2 className="ms-5">
             <FormattedDate date={weather.date} />
           </h2>
